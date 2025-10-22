@@ -19,6 +19,16 @@ public class IterativeMethods {
 		}
 		return sum;
 	}
+	public static double recursiveGeometricSum(int n){
+		double sum = 0.0;
+		int power = 0;
+		if (power <=n){
+			return sum;
+		}
+		else {
+			return recursiveGeometricSum(power+1)+Math.pow(0.5, power);
+		}
+	}
 
 	/**
 	 * @param p first operand
