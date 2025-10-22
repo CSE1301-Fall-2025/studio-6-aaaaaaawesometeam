@@ -41,23 +41,36 @@ public class RecursiveMethods {
 	 * 
 	 * @param array the array to create a reverse of, not to be mutated
 	 * @return an array with the same data as the input but it reverse order
-	 */
+	/ */
 	public static int[] toReversed(int[] array) {
-		
+		int[] newArray = new int[array.length];
 			// FIXME create a helper method that can recursively reverse the given array
-			return toReversedHelper(array, array.length/2);
+			return toReversedHelper(array, newArray, 0);
+		
+	}
+	public static int[] toReversedHelper(int[] array, int[]newArray , int index){
+		newArray[index] = array[array.length-index-1];
+		if (index == array.length-1){
+			return newArray;
+		}
+		else{
+		return toReversedHelper(array, newArray, index+1);
+		}
+	}
+	/*public static int[] toReversed(int[] array) {
+		// FIXME create a helper method that can recursively reverse the given array
+		return toReversedHelper(array, (array.length/2)-1);
 		
 	}
 	public static int[] toReversedHelper(int[] array, int index){
-		int temp = array[array.length - index];
-		array[index] = array[array.length - index];
-		array[array.length - index] = temp;
-		if (index == 0){
+		if (index == -1){
 			return array;
 		}
-		else
+		int temp = array[index];
+		array[index] = array[array.length - index-1];
+		array[array.length - index-1] = temp;
 		return toReversedHelper(array, index-1);
-	}
+	}*/
 
 	/**
 	 * This method uses recursion to compute the greatest common divisor
