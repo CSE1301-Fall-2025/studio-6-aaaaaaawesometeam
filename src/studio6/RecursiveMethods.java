@@ -91,7 +91,10 @@ public class RecursiveMethods {
 	public static int gcd(int p, int q) {
 		
 			// FIXME compute the gcd of p and q using recursion
-			return 0;
+			if (q == 0){
+				return p;
+			}
+			return gcd(q,p%q);
 		
 	}
 
