@@ -1,6 +1,6 @@
 package studio6;
 
-import edu.princeton.cs.introcs.StdDraw;
+//import edu.princeton.cs.introcs.StdDraw;
 
 public class RecursiveMethods {
 
