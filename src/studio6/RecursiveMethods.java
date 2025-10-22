@@ -1,6 +1,6 @@
 package studio6;
 
-//import edu.princeton.cs.introcs.StdDraw;
+import edu.princeton.cs.introcs.StdDraw;
 
 public class RecursiveMethods {
 
@@ -31,8 +31,18 @@ public class RecursiveMethods {
 	 * @param radiusMinimumDrawingThreshold radius above which drawing should occur
 	 */
 	public static void circlesUponCircles(double xCenter, double yCenter, double radius, double radiusMinimumDrawingThreshold) {
-		
+		StdDraw.circle(xCenter, yCenter, radius);
 		// FIXME complete the recursive drawing
+		if (radius>3*radiusMinimumDrawingThreshold){
+			circlesUponCircles(xCenter+radius, yCenter, radius/3, radiusMinimumDrawingThreshold);
+			circlesUponCircles(xCenter-radius, yCenter, radius/3, radiusMinimumDrawingThreshold);
+			circlesUponCircles(xCenter, yCenter+radius, radius/3, radiusMinimumDrawingThreshold);
+			circlesUponCircles(xCenter, yCenter-radius, radius/3, radiusMinimumDrawingThreshold);
+		}
+		else{ 
+			return;
+		}
+		
 	}
 	
 
